@@ -31,7 +31,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -64,7 +65,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -4061,9 +4063,49 @@
     "name": "solc",
     "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x321374D4CD736Ce5484BFb3aF59C290639b73eA4",
+      "transactionHash": "0x94cc8f0ca97b2f4de8f1d33c47796d2f95b211e6b0470c2be22d228ad023e85d"
+    },
+    "5": {
+      "events": {},
+      "links": {},
+      "address": "0x321374D4CD736Ce5484BFb3aF59C290639b73eA4",
+      "transactionHash": "0x94cc8f0ca97b2f4de8f1d33c47796d2f95b211e6b0470c2be22d228ad023e85d"
+    },
+    "5777": {
+      "events": {
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address",
+              "internalType": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x480e50782067B06065A5c898db7699717DBe9f7b",
+      "transactionHash": "0x712bf3ee36f3cf7e30c9c8cd26c68ff76084b2c5957431bd0d5f18d6c196fd0b"
+    }
+  },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-05-05T09:27:29.100Z",
+  "updatedAt": "2022-05-05T12:27:26.949Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
