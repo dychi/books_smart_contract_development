@@ -5,6 +5,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 contract Fundraiser is Ownable {
+    event DonationReceived(address indexed donor, uint256 value);
+    event Withdraw(uint256 amount);
+
     using SafeMath for uint256;
     uint256 public totalDonations;
     uint256 public donationsCount;
@@ -54,6 +57,8 @@ contract Fundraiser is Ownable {
         _donations[msg.sender].push(donation);
         totalDonations = totalDonations.add(msg.value);
         donationsCount++;
+
+        emit DonationReceived(msg.sender, msg.value);
     }
 
     function myDonations()
@@ -71,5 +76,16 @@ contract Fundraiser is Ownable {
             dates[i] = donation.date;
         }
         return (values, dates);
+    }
+
+    function withdraw() public onlyOwner {
+        uint256 balance = address(this).balance;
+        beneficiary.transfer(balance);
+        emit Withdraw(balance);
+    }
+
+    fallback() external payable {
+        totalDonations = totalDonations.add(msg.value);
+        donationsCount++;
     }
 }
